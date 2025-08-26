@@ -10,7 +10,7 @@ async function sendSlackMessage(message) {
         await axios.post(slackWebHookUrl, { text: message });
         console.log('Slack message sent with succes!');
     } catch (err) {
-        console.log('Error trying to send slack message');
+        console.log('Error trying to send slack message: ', err.message);
     }
 }
 
@@ -30,10 +30,11 @@ async function checkAndSendAlerts() {
             }
         }
     } catch (err){
-        console.log('Error trying to get mock data');
+        console.log('Error trying to get mock data: ', err.message);
     }
 }
 
 
 checkAndSendAlerts();
+
 
