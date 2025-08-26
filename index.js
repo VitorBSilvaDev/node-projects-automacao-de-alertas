@@ -22,7 +22,7 @@ async function checkAndSendAlerts() {
         for (const alert of alerts) {
             if (alert.status === 'critical' || alert.status === 'warning') {
                 const message = `ALERT: ${alert.id} : status : ${alert.status.toUpperCase()} : Message : ${alert.message}`
-                sendSlackMessage(message);
+                await sendSlackMessage(message);
             }
         }
     } catch (err){
