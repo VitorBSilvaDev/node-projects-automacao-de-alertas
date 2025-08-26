@@ -20,6 +20,9 @@ async function checkAndSendAlerts() {
         const alerts = response.alerts;
 
         console.log('Checking alerts...')
+        
+        // For in - Itera sobre as propriedades de um objeto
+        // For of - Itera sobre os valores de um objeto
         for (const alert of alerts) {
             if (alert.status === 'critical' || alert.status === 'warning') {
                 const message = `ALERT: ${alert.id} : status : ${alert.status.toUpperCase()} : Message : ${alert.message}`
@@ -33,3 +36,4 @@ async function checkAndSendAlerts() {
 
 
 checkAndSendAlerts();
+
