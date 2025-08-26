@@ -2,7 +2,8 @@ import getAlerts from './mockApi.js';
 
 import axios from 'axios';
 
-const slackWebHookUrl = 'https://hooks.slack.com/services/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';
+// Insira seu slackWebHook
+const slackWebHookUrl = '';
 
 async function sendSlackMessage(message) {
     try {
@@ -29,5 +30,6 @@ async function checkAndSendAlerts() {
         console.log('Error trying to get mock data');
     }
 }
+
 
 checkAndSendAlerts();
